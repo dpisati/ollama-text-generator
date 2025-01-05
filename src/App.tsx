@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
     const body = {
       model: "llama3.2",
-      prompt: `rewrite and enhance the following text in a friendly and short way (only the text reply - without quotes): ${input}`,
+      prompt: `rewrite following text fixing the grammar (only the text reply - without quotes): ${input}`,
       stream: true, // Enable streaming
     };
 
