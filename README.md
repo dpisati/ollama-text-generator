@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# **Text Generation App with Vite, React, TypeScript, and Ollama**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application that generates text using a local Ollama API (`llama3.2`). It features a sleek interface built with React, TypeScript, and Vite and supports streaming responses for real-time updates.
 
-Currently, two official plugins are available:
+## **Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Text Generation**: Rewrite and enhance text prompts using `llama3.2`.
+- **Streaming Updates**: Text is rendered word-by-word in real time as the response is received.
+- **Abort Requests**: Cancel ongoing text generation anytime.
+- **Clipboard Support**: Copy generated text directly to the clipboard.
+- **Keyboard Shortcuts**: Press Enter to start text generation.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Requirements**
 
-- Configure the top-level `parserOptions` property like this:
+1. **Node.js**: Version 16 or later.
+2. **Local Ollama Server**:
+   - Install and start the Ollama API locally at `http://localhost:11434`.
+   - Ensure `llama3.2` is available and configured correctly.
+3. **Vite Development Server**:
+   - The frontend is built with Vite and requires basic familiarity with its setup.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## **Setup Instructions**
+
+### **1. Clone the Repository**
+
+```bash
+git clone <repository-url>
+cd <repository-folder>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### **2. Install Dependencies**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### **3. Start the Local Ollama API**
+
+Ensure the Ollama server is running on http://localhost:11434. You can start it using:
+
+```bash
+ollama run llama3.2
+```
+
+### **4. Start the Vite Development Server**
+
+Run the Vite server:
+
+```bash
+npm run dev
 ```
