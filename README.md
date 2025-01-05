@@ -43,6 +43,9 @@ npm install
 Ensure the Ollama server is running on http://localhost:11434. You can start it using:
 
 ```bash
+ollama start
+
+# if you need to test it on terminal:
 ollama run llama3.2
 ```
 
